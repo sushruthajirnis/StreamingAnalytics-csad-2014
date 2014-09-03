@@ -1,0 +1,5 @@
+<stream-element timestamp='2014-08-17 23:20:31 CET'>
+<field name='value' type='numeric'></field>
+<field name='latitude' type='numeric'>45.3</field>
+<field name='longitude' type='numeric'>8.4</field>
+</stream-element>
