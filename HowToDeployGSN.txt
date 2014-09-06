@@ -1,0 +1,7 @@
+1. Clone the gsn folder from the repository
+
+2. cd into the gsn folder and type in the command "ant gsn". The build file will first compile and build and subsequently deploy the GSN server
+
+3. To make sure the gsn server is correctly deployed go to http://localhost:22001
+
+4. The gsn server is correctly deployed if you see a UI page that has a title GSN Server.
