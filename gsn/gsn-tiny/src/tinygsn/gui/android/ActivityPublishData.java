@@ -25,7 +25,6 @@
 
 package tinygsn.gui.android;
 
-import gsn.aws.KinesisConnect;
 import gsn.http.rest.PushDelivery;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,8 +53,7 @@ public class ActivityPublishData extends SherlockFragmentActivity {
 	public static String[] STRATEGY = { "On demand", "Periodically (time)",
 			"Periodically (values)" };
 	static int TEXT_SIZE = 10;
-	public static String DEFAULT_SERVER = "http://10.10.0.117:22001";
-    //10.0.2.2:22001";
+	public static String DEFAULT_SERVER = "http://10.0.2.2:22001";
 
 	private Context context = null;
 	private AndroidControllerPublishData controller;
@@ -183,30 +181,21 @@ public class ActivityPublishData extends SherlockFragmentActivity {
 			finish();
 			break;
 		case 0:
-			try {
-				publish(null);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			publish(null);
 			break;
 		}
 		return true;
 	}
 
 	public void registerPush() {
-		push = new PushDelivery("http://10.10.0.117:22001" + "/streaming/", 2.3456789);
-		//push = new PushDelivery("http://10.189.211.77:22001" + "/streaming/", 2.3456789);
+		push = new PushDelivery(DEFAULT_SERVER + "/streaming/", 1.235813);
 	}
 
-	public void publish(View view) throws Exception {
+	public void publish(View view) {
 		StreamElement se = controller.loadLatestData(spinner_vsName
 				.getSelectedItem().toString());
 
 		if (se != null) {
-			Toast.makeText(this, "Data is:"+se, Toast.LENGTH_SHORT)
-			.show();
-			//new KinesisConnect().pushToStream(se.toString());
 			new PublishDataTask().execute(se);
 		}
 		else {
@@ -222,7 +211,6 @@ public class ActivityPublishData extends SherlockFragmentActivity {
 		@Override
 		protected Boolean doInBackground(StreamElement... params) {
 			se = params[0];
-			//Toast.makeText(context, "SE value:"+se.toString(), Toast.LENGTH_SHORT);
 			return push.writeStreamElement(se);
 		}
 
@@ -247,8 +235,7 @@ public class ActivityPublishData extends SherlockFragmentActivity {
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenu.ContextMenuInfo menuInfo) {
-		menu.add("http://10.10.0.117:22001");
-		//menu.add("http://10.189.211.77:22001");
+		menu.add("http://10.0.2.2:22001");
 		menu.add("http://gsn.ijs.si");
 		menu.add("http://montblanc.slf.ch:22001");
 		menu.add("http://data.permasense.ch");
