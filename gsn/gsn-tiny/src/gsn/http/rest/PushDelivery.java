@@ -115,7 +115,8 @@ public class PushDelivery {
 
 			int statusCode = response.getStatusLine().getStatusCode();
 			response.getEntity().getContent().close(); // releasing the connection to
-																									// the http client's pool
+																									
+			// the http client's pool
 			if (statusCode != 200) {
 				return false;
 			}
@@ -140,7 +141,7 @@ public class PushDelivery {
 
 			int statusCode = response.getStatusLine().getStatusCode();
 			response.getEntity().getContent().close(); // releasing the connection to
-																									// the http client's pool
+			// the http client's pool
 
 			Log.v("PushDelivery", "sendData: xml=" + xml);
 
