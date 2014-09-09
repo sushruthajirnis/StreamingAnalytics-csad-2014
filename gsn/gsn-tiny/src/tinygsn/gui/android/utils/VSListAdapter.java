@@ -30,13 +30,10 @@ import tinygsn.controller.AndroidControllerListVSNew;
 import tinygsn.gui.android.ActivityListVSNew;
 import tinygsn.gui.android.ActivityViewDataNew;
 import tinygsn.gui.android.R;
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -55,7 +52,6 @@ import android.widget.Toast;
  * @author Do Ngoc Hoan (hoan.do@epfl.ch)
  *
  */
-@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class VSListAdapter extends ArrayAdapter<VSRow> {
 
 	public static final String EXTRA_VS_NAME = "vs_name";
@@ -77,8 +73,6 @@ public class VSListAdapter extends ArrayAdapter<VSRow> {
 		this.activityListVSNew = activityListVSNew;
 	}
 
-	@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-	@SuppressLint("NewApi")
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 

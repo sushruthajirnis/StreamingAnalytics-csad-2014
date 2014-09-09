@@ -6,8 +6,6 @@
 			<field name="light" type="double" />
 			<field name="temperature" type="double" />
 			<field name="packet_type" type="double" />
-            
-            
 		</output-structure>
 	</processing-class>
 	<description>This sensor simulates light and temperature readings

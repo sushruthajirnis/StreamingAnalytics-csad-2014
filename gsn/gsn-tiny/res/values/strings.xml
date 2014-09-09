@@ -35,7 +35,7 @@
     <string name="server">GSN server</string>
     <string name="strategy">Strategy</string>
     <string name="Publish_Data">Publish Data</string>
-    <string name="gsnserver">http://10.189.211.77:22001</string>
+    <string name="gsnserver">http://10.10.0.117:22001</string>
     <string name="every">Every (seconds)</string>
     <string name="sixty">60</string>
     <string name="publish">Publish Now</string>

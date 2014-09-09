@@ -56,7 +56,7 @@ import org.apache.log4j.Logger;
 
 public class FieldDownloadServlet extends HttpServlet {
 
-	private static transient Logger logger = Logger.getLogger( FieldDownloadServlet.class );
+	private static transient Logger                                      logger                             = Logger.getLogger( FieldDownloadServlet.class );
 
 	static final String prefix  = "select * from ";
 
