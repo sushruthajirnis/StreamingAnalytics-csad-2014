@@ -53,7 +53,7 @@ public class ActivityPublishData extends SherlockFragmentActivity {
 	public static String[] STRATEGY = { "On demand", "Periodically (time)",
 			"Periodically (values)" };
 	static int TEXT_SIZE = 10;
-	public static String DEFAULT_SERVER = "http://10.0.2.2:22001";
+	public static String DEFAULT_SERVER = "http://10.10.0.117:22001";//"http://10.0.2.2:22001";
 
 	private Context context = null;
 	private AndroidControllerPublishData controller;
@@ -188,7 +188,7 @@ public class ActivityPublishData extends SherlockFragmentActivity {
 	}
 
 	public void registerPush() {
-		push = new PushDelivery(DEFAULT_SERVER + "/streaming/", 1.235813);
+		push = new PushDelivery(DEFAULT_SERVER + "/streaming/", 2.3456789);
 	}
 
 	public void publish(View view) {
@@ -235,7 +235,8 @@ public class ActivityPublishData extends SherlockFragmentActivity {
 	@Override
 	public void onCreateContextMenu(ContextMenu menu, View v,
 			ContextMenu.ContextMenuInfo menuInfo) {
-		menu.add("http://10.0.2.2:22001");
+		//menu.add("http://10.0.2.2:22001");
+		menu.add("http://10.10.0.117:22001");
 		menu.add("http://gsn.ijs.si");
 		menu.add("http://montblanc.slf.ch:22001");
 		menu.add("http://data.permasense.ch");
